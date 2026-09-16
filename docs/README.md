@@ -1,17 +1,11 @@
-# travel_story
+# 🌍 Travel Story — Minimalist Travel Tracker & Visual Journal
 
-A new Flutter project.
+Dokumentasi lengkap dan README utama proyek ini dapat dilihat pada file [README.md utama di root direktori](../README.md).
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Silakan merujuk ke dokumen-dokumen terkait di folder `docs/` ini untuk spesifikasi lebih detail:
+- [PRD (Product Requirements Document)](PRD.md)
+- [Design System & UI Guidelines](design.md)
+- [Product Scope](01-product-scope.md)
+- [Product Rules](02-product-rules.md)
+- [Roadmap](ROADMAP.md)
+- [Polyline & Route Engine](polyline.md)

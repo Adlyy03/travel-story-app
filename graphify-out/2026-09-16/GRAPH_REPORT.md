@@ -1,18 +1,13 @@
-# Graph Report - travel_story  (2026-09-16)
+# Graph Report - travel_story  (2026-09-09)
 
 ## Corpus Check
-- 108 files · ~135,820 words
+- 107 files · ~134,840 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1250 nodes · 1652 edges · 75 communities (68 shown, 7 thin omitted)
+- 1234 nodes · 1630 edges · 82 communities (75 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
-
-## Graph Freshness
-- Built from commit: `649dbf12`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Win32Window
@@ -23,7 +18,7 @@
 - main_shell.dart
 - home_page.dart
 - tracking_service.dart
-- trip_local_data_source.dart
+- trip_calculator_test.dart
 - trips_tab.dart
 - trip_detail_page.dart
 - home_tab.dart
@@ -58,26 +53,28 @@
 - State
 - MainActivity.kt
 - Development Environment
-- dev/seed_dummy_trip.dart
+- travel_story
 - rules/graphify.md
 - workflows/graphify.md
 - LaunchImage.imageset/README.md
-- ../../shared/models/trip.dart
-- _TripsTabState
-- _openFullscreenPreview
 - String?
 - notification_service.dart
 - package:flutter/material.dart
 - app_database.dart
-- profile_tab.dart
+- ../../core/theme/app_colors.dart
 - story_exporter.dart
 - StatelessWidget
+- splash_screen.dart
 - story_export_page.dart
 - LiveTripWidgetProvider.kt
 - trip_photo.dart
 - story_share_service.dart
 - Route /trip/map
+- gps_cleaner_test.dart
+- edge_case_tests.dart
 - story_template.dart
+- widget_test.dart
+- Route /story/preview
 - Route /trip/form
 
 ## God Nodes (most connected - your core abstractions)
@@ -90,7 +87,7 @@
 7. `WndProc` - 10 edges
 8. `MessageHandler` - 9 edges
 9. `DESIGN.md — Travel Story (Minimalism)` - 9 edges
-10. `🌍 Travel Story — Minimalist Travel Tracker & Visual Journal` - 8 edges
+10. `_MyApplication` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `wWinMain()` --calls--> `CreateAndAttachConsole()`  [INFERRED]
@@ -107,7 +104,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (75 total, 7 thin omitted)
+## Communities (82 total, 7 thin omitted)
 
 ### Community 0 - "Win32Window"
 Cohesion: 0.05
@@ -119,7 +116,7 @@ Nodes (34): Any, Cocoa, file_picker_darwin, file_selector_macos, Flutter, flutte
 
 ### Community 2 - "sync_service.dart"
 Cohesion: 0.11
-Nodes (18): ../../features/trip/data/trip_local_data_source.dart, ../../features/trip/data/trip_repository.dart, _backendEndpoint, _checkInternetConnection, _connectivityTimer, dispose, init, instance (+10 more)
+Nodes (17): ../../features/trip/data/trip_repository.dart, _backendEndpoint, _checkInternetConnection, _connectivityTimer, dispose, init, instance, _isOnline (+9 more)
 
 ### Community 3 - "story_renderer.dart"
 Cohesion: 0.05
@@ -134,16 +131,16 @@ Cohesion: 0.08
 Nodes (25): ../../core/services/location_service.dart, ../home/home_tab.dart, activeIcon, build, children, createState, _currentIndex, _handleCenterStartTrip (+17 more)
 
 ### Community 6 - "home_page.dart"
-Cohesion: 0.08
-Nodes (23): TrackingService, _activeTrip, build, _buildTrackingCard, createState, dispose, _error, _formatDate (+15 more)
+Cohesion: 0.05
+Nodes (40): ../../core/services/elevation_calculator.dart, ../../core/services/gps_cleaner.dart, ../../core/services/stop_detector.dart, ../../core/services/trip_calculator.dart, ../../core/services/trip_engine.dart, ../../features/trip/data/trip_local_data_source.dart, TrackingService, createTrip (+32 more)
 
 ### Community 7 - "tracking_service.dart"
 Cohesion: 0.05
 Nodes (36): _activeTrip, activeTripNotifier, _buffer, _captureLocation, dispose, getActiveTrip, _gpsCleaner, instance (+28 more)
 
-### Community 8 - "trip_local_data_source.dart"
-Cohesion: 0.10
-Nodes (19): ../../../core/database/app_database.dart, createTrip, deleteAllTrips, deleteTrip, deleteTripPhoto, getActiveTrip, getAllTrips, getLocationPointsByTripId (+11 more)
+### Community 8 - "trip_calculator_test.dart"
+Cohesion: 0.18
+Nodes (10): TripCalculator, package:travel_story/shared/models/location_point.dart, calculator, _counter, lat, lon, main, _point (+2 more)
 
 ### Community 9 - "trips_tab.dart"
 Cohesion: 0.10
@@ -155,7 +152,7 @@ Nodes (22): ../../features/story/domain/story_builder.dart, _buildHeader, _build
 
 ### Community 11 - "home_tab.dart"
 Cohesion: 0.07
-Nodes (27): ../../features/trip/live_trip_sheet.dart, build, _buildError, _buildMulaiButtonCard, _buildTimeframeSelector, _buildUserStats, _completedTrips, createState (+19 more)
+Nodes (29): ../../features/trip/live_trip_sheet.dart, build, _buildError, _buildMulaiButtonCard, _buildTimeframeSelector, _buildUserStats, _completedTrips, createState (+21 more)
 
 ### Community 12 - "my_application.cc"
 Cohesion: 0.09
@@ -174,12 +171,12 @@ Cohesion: 0.08
 Nodes (25): int?, copyWith, distanceMeters, durationSeconds, elevationGainMeters, elevationLossMeters, endedAt, fromMap (+17 more)
 
 ### Community 16 - "memories_tab.dart"
-Cohesion: 0.06
-Nodes (35): _createStory, _openStory, build, _buildEmpty, _buildStory, createState, didChangeDependencies, _error (+27 more)
+Cohesion: 0.07
+Nodes (28): build, _buildEmpty, _buildStory, createState, didChangeDependencies, _error, _formatDistance, _formatDuration (+20 more)
 
 ### Community 17 - "trip_map_page.dart"
-Cohesion: 0.05
-Nodes (44): Animation, AnimationController, ../../core/services/route_smoother.dart, dart:async, build, _controller, createState, dispose (+36 more)
+Cohesion: 0.07
+Nodes (27): ../../core/services/route_smoother.dart, build, _center, createState, didChangeDependencies, dispose, _formatDistance, _formatDuration (+19 more)
 
 ### Community 18 - "location_service.dart"
 Cohesion: 0.11
@@ -190,8 +187,8 @@ Cohesion: 0.08
 Nodes (23): data/trip_local_data_source.dart, data/trip_repository.dart, ../database/app_database.dart, FormState, seed, SeedDummyTrip, build, createState (+15 more)
 
 ### Community 20 - "trip_repository.dart"
-Cohesion: 0.10
-Nodes (20): addLocationPoint, addStop, addTripPhoto, createTrip, deleteAllTrips, deleteTrip, deleteTripPhoto, getActiveTrip (+12 more)
+Cohesion: 0.04
+Nodes (45): ../../../core/database/app_database.dart, build, StoryBuilder, createTrip, deleteAllTrips, deleteTrip, deleteTripPhoto, getActiveTrip (+37 more)
 
 ### Community 21 - "trip_engine.dart"
 Cohesion: 0.18
@@ -202,8 +199,8 @@ Cohesion: 0.13
 Nodes (14): Battery Optimization, Build APK, Current Status, Day 26-30: Final Polish & Release, Day 26: Edge Cases ✅, Day 27: Real World Test, Day 28: Battery & Privacy, Day 29: UI Polish (+6 more)
 
 ### Community 23 - "live_trip_sheet.dart"
-Cohesion: 0.14
-Nodes (14): ../../core/services/tracking_service.dart, ../../core/theme/app_colors.dart, createState, dispose, _formatDistance, _formatDuration, _formatTime, initState (+6 more)
+Cohesion: 0.15
+Nodes (12): ../../core/services/tracking_service.dart, dart:async, createState, dispose, _formatDistance, _formatDuration, _formatTime, initState (+4 more)
 
 ### Community 24 - "place_service.dart"
 Cohesion: 0.13
@@ -222,16 +219,16 @@ Cohesion: 0.24
 Nodes (9): _In_, _In_opt_, vector, wWinMain(), string, wchar_t, CreateAndAttachConsole(), GetCommandLineArguments() (+1 more)
 
 ### Community 28 - "gps_cleaner.dart"
-Cohesion: 0.13
-Nodes (14): calculateDistance, clean, _isDuplicate, _isImpossibleMovement, isPointValid, isSignificantMovement, _isValidAccuracy, _isValidCoordinate (+6 more)
+Cohesion: 0.14
+Nodes (13): calculateDistance, clean, _isDuplicate, _isImpossibleMovement, isPointValid, isSignificantMovement, _isValidAccuracy, _isValidCoordinate (+5 more)
 
 ### Community 29 - "stop.dart"
-Cohesion: 0.15
-Nodes (12): DateTime, arrivalTime, departureTime, durationSeconds, fromMap, id, latitude, longitude (+4 more)
+Cohesion: 0.17
+Nodes (11): arrivalTime, departureTime, durationSeconds, fromMap, id, latitude, longitude, placeId (+3 more)
 
 ### Community 30 - "story_editor_page.dart"
-Cohesion: 0.06
-Nodes (35): _addPhoto, build, _buildBottomBar, _buildPreviewCard, bytes, color, createState, didChangeDependencies (+27 more)
+Cohesion: 0.05
+Nodes (37): _addPhoto, build, _buildBottomBar, _buildPreviewCard, bytes, color, createState, didChangeDependencies (+29 more)
 
 ### Community 31 - "elevation_calculator.dart"
 Cohesion: 0.18
@@ -242,24 +239,24 @@ Cohesion: 0.18
 Nodes (10): _calculateDistance, _createStop, detectStops, _isWithinRadius, _minStopDuration, _movementRadiusMeters, StopDetector, _toRadians (+2 more)
 
 ### Community 33 - "trip_completed_page.dart"
-Cohesion: 0.06
-Nodes (32): CustomPainter, _AnimatedRoutePainter, _animCtrl, build, _buildContent, _buildError, _buildStatsGrid, createState (+24 more)
+Cohesion: 0.07
+Nodes (30): CustomPainter, _AnimatedRoutePainter, _animCtrl, build, _buildContent, _buildError, _buildStatsGrid, createState (+22 more)
 
 ### Community 34 - "manifest.json"
 Cohesion: 0.18
 Nodes (10): background_color, description, display, icons, name, orientation, prefer_related_applications, short_name (+2 more)
 
 ### Community 35 - "DESIGN.md — Travel Story (Minimalism)"
-Cohesion: 0.06
-Nodes (26): 1. PRINSIP, 2. COLOR TOKENS, 3. TYPOGRAPHY, 4. SPACING & RADIUS, 5. COMPONENTS, 6. ICONOGRAPHY, 7. MOTION, 8. CHECKLIST SEBELUM SELESAI STYLING (+18 more)
+Cohesion: 0.20
+Nodes (9): 1. PRINSIP, 2. COLOR TOKENS, 3. TYPOGRAPHY, 4. SPACING & RADIUS, 5. COMPONENTS, 6. ICONOGRAPHY, 7. MOTION, 8. CHECKLIST SEBELUM SELESAI STYLING (+1 more)
 
 ### Community 36 - "widget_service.dart"
-Cohesion: 0.25
-Nodes (7): _androidWidgetName, clearLiveTripWidget, _formatDistance, _formatDuration, updateLiveTripWidget, WidgetService, package:home_widget/home_widget.dart
+Cohesion: 0.22
+Nodes (8): _androidWidgetName, clearLiveTripWidget, _formatDistance, _formatDuration, updateLiveTripWidget, WidgetService, package:flutter/foundation.dart, package:home_widget/home_widget.dart
 
 ### Community 37 - "story_animated_player.dart"
 Cohesion: 0.05
-Nodes (44): build, _buildCoverScene, _buildPhotosScene, _buildRouteScene, _buildSegmentedProgressBar, _buildStatsScene, _buildSummaryScene, _buildVideoContent (+36 more)
+Nodes (42): build, _buildCoverScene, _buildPhotosScene, _buildRouteScene, _buildSegmentedProgressBar, _buildStatsScene, _buildSummaryScene, _buildVideoContent (+34 more)
 
 ### Community 38 - "../../shared/models/location_point.dart"
 Cohesion: 0.29
@@ -270,20 +267,8 @@ Cohesion: 0.09
 Nodes (21): LatLng, calculateBearing, calculateDistance, extractTurnArrows, _fetchMapMatching, _fetchRouteForWaypoints, _filterGpsNoise, heading (+13 more)
 
 ### Community 40 - "State"
-Cohesion: 0.16
-Nodes (18): HomePage, _HomePageState, HomeTab, _HomeTabState, _CenterNavActionItem, _CenterNavActionItemState, MainShell, _MainShellState (+10 more)
-
-### Community 43 - "dev/seed_dummy_trip.dart"
-Cohesion: 0.12
-Nodes (16): ../../core/services/elevation_calculator.dart, ../../core/services/gps_cleaner.dart, ../../core/services/stop_detector.dart, ../../core/services/trip_calculator.dart, ../../core/services/trip_engine.dart, createTrip, engine, _point (+8 more)
-
-### Community 50 - "../../shared/models/trip.dart"
-Cohesion: 0.29
-Nodes (6): build, StoryBuilder, package:intl/intl.dart, ../../shared/models/trip.dart, ../../../shared/models/trip_photo.dart, story_model.dart
-
-### Community 51 - "_TripsTabState"
-Cohesion: 0.67
-Nodes (3): AutomaticKeepAliveClientMixin, TripsTab, _TripsTabState
+Cohesion: 0.10
+Nodes (32): AutomaticKeepAliveClientMixin, HomePage, _HomePageState, MemoriesTab, _MemoriesTabState, _CenterNavActionItem, _CenterNavActionItemState, MainShell (+24 more)
 
 ### Community 64 - "notification_service.dart"
 Cohesion: 0.07
@@ -294,12 +279,12 @@ Cohesion: 0.05
 Nodes (40): app/app.dart, app_colors.dart, core/debug/seed_dummy_trip.dart, core/services/notification_service.dart, ../../core/services/sync_service.dart, ../core/theme/app_theme.dart, ../features/shell/main_shell.dart, ../features/splash/splash_screen.dart (+32 more)
 
 ### Community 66 - "app_database.dart"
-Cohesion: 0.04
-Nodes (44): AppDatabase, close, _database, _databaseName, _databaseVersion, _initDatabase, _onCreate, _onUpgrade (+36 more)
-
-### Community 67 - "profile_tab.dart"
 Cohesion: 0.15
-Nodes (12): ../../dev/seed_dummy_trip.dart, build, icon, label, onTap, ProfileTab, _SectionLabel, _SettingItem (+4 more)
+Nodes (12): AppDatabase, close, _database, _databaseName, _databaseVersion, _initDatabase, _onCreate, _onUpgrade (+4 more)
+
+### Community 67 - "../../core/theme/app_colors.dart"
+Cohesion: 0.14
+Nodes (13): ../../core/theme/app_colors.dart, ../../dev/seed_dummy_trip.dart, build, icon, label, onTap, ProfileTab, _SectionLabel (+5 more)
 
 ### Community 68 - "story_exporter.dart"
 Cohesion: 0.20
@@ -308,6 +293,10 @@ Nodes (9): dart:io, domain/story_model.dart, cleanup, exportImage, _filename, _r
 ### Community 69 - "StatelessWidget"
 Cohesion: 0.12
 Nodes (16): _StoryCard, _AnimatedPageStack, _MinimalNavBar, _NavItem, _StatHeroCard, _FullscreenPreview, _PhotosTab, _PreviewActionButton (+8 more)
+
+### Community 70 - "splash_screen.dart"
+Cohesion: 0.17
+Nodes (11): Animation, AnimationController, build, _controller, createState, dispose, _fadeAnimation, initState (+3 more)
 
 ### Community 71 - "story_export_page.dart"
 Cohesion: 0.13
@@ -318,8 +307,8 @@ Cohesion: 0.33
 Nodes (7): LiveTripWidgetProvider, AppWidgetManager, Color, Context, HomeWidgetProvider, IntArray, SharedPreferences
 
 ### Community 73 - "trip_photo.dart"
-Cohesion: 0.17
-Nodes (11): caption, copyWith, fromMap, id, latitude, longitude, path, timestamp (+3 more)
+Cohesion: 0.15
+Nodes (12): DateTime, caption, copyWith, fromMap, id, latitude, longitude, path (+4 more)
 
 ### Community 74 - "story_share_service.dart"
 Cohesion: 0.20
@@ -329,6 +318,14 @@ Nodes (9): _exporter, saveToAppDocuments, saveToGallery, shareStory, StoryShareS
 Cohesion: 0.33
 Nodes (6): build, build, _buildActions, _buildList, Route /trip/completed, Route /trip/map
 
+### Community 76 - "gps_cleaner_test.dart"
+Cohesion: 0.20
+Nodes (9): GpsCleaner, accuracy, cleaner, _counter, lat, lon, main, _point (+1 more)
+
+### Community 77 - "edge_case_tests.dart"
+Cohesion: 0.22
+Nodes (8): TripEngine, package:travel_story/core/services/elevation_calculator.dart, package:travel_story/core/services/gps_cleaner.dart, package:travel_story/core/services/stop_detector.dart, package:travel_story/core/services/trip_calculator.dart, package:travel_story/core/services/trip_engine.dart, engine, main
+
 ### Community 78 - "story_template.dart"
 Cohesion: 0.50
 Nodes (3): journal, StoryTemplate, minimal,
@@ -336,12 +333,20 @@ Nodes (3): journal, StoryTemplate, minimal,
   cinematic,
   strava,
 
+### Community 79 - "widget_test.dart"
+Cohesion: 0.33
+Nodes (5): package:flutter/services.dart, package:flutter_test/flutter_test.dart, package:sqflite/sqflite.dart, package:travel_story/app/app.dart, main
+
+### Community 80 - "Route /story/preview"
+Cohesion: 0.40
+Nodes (5): _createStory, _openStory, _previewStory, _createStory, Route /story/preview
+
 ### Community 81 - "Route /trip/form"
 Cohesion: 0.50
 Nodes (4): _buildTripList, build, _buildEmpty, Route /trip/form
 
 ## Knowledge Gaps
-- **763 isolated node(s):** `build`, `AppRoutes`, `routes`, `AppDatabase`, `_database` (+758 more)
+- **750 isolated node(s):** `build`, `AppRoutes`, `routes`, `AppDatabase`, `_database` (+745 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -351,14 +356,14 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `TripRepository` connect `trip_repository.dart` to `trip_completed_page.dart`, `sync_service.dart`, `story_preview_page.dart`, `home_page.dart`, `tracking_service.dart`, `trips_tab.dart`, `trip_detail_page.dart`, `home_tab.dart`, `memories_tab.dart`, `trip_map_page.dart`, `trip_form_page.dart`, `story_editor_page.dart`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `Trip` connect `trip_form_page.dart` to `trip_completed_page.dart`, `home_page.dart`, `tracking_service.dart`, `trips_tab.dart`, `trip_detail_page.dart`, `home_tab.dart`, `trip.dart`, `memories_tab.dart`, `trip_map_page.dart`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `StoryModel` connect `story_export_page.dart` to `story_preview_page.dart`, `story_animated_player.dart`, `story_model.dart`, `story_editor_page.dart`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `build`, `AppRoutes`, `routes` to the rest of the system?**
-  _763 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _750 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Win32Window` be split into smaller, more focused modules?**
   _Cohesion score 0.05311676909569798 - nodes in this community are weakly interconnected._
 - **Should `GeneratedPluginRegistrant.swift` be split into smaller, more focused modules?**
   _Cohesion score 0.04964539007092199 - nodes in this community are weakly interconnected._
 - **Should `sync_service.dart` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

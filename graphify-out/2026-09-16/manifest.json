@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/README.md": {
-    "mtime": 1789544432.9584658,
-    "seen": 1789544441.150436,
-    "ast_hash": "2f69c1ababe34f29a7a500d662afb88b",
+    "mtime": 1787799339.664076,
+    "seen": 1788423635.784907,
+    "ast_hash": "fab0efea88e1dedddd3ec4ef84136adb",
     "semantic_hash": ""
   },
   "docs/ROADMAP.md": {
@@ -915,12 +915,6 @@
     "mtime": 1788851154.0451622,
     "seen": 1788852317.1634066,
     "ast_hash": "8606f89fff94c9d693269f8816e6e119",
-    "semantic_hash": ""
-  },
-  "README.md": {
-    "mtime": 1789544429.3183231,
-    "seen": 1789544441.1504226,
-    "ast_hash": "7b98edc8dad648e24f5abf9bf4989c13",
     "semantic_hash": ""
   }
 }
